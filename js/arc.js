@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.className = 'character-card';
     card.innerHTML = `
       <div class="character-card__info">
-        <div class="character-card__avatar">${char.initial}</div>
+        <img class="character-card__avatar" src="${char.image}" alt="${char.name}" />
         <div>
           <div class="character-card__name">${char.name}</div>
           <div class="character-card__role">${char.role}</div>
@@ -58,9 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('modal-char-bounty').textContent = char.bounty;
     document.getElementById('modal-char-desc').textContent   = char.desc;
 
-    // Set avatar initial
+    // Set character image
     const imgPlaceholder = document.getElementById('modal-char-image');
-    imgPlaceholder.textContent = char.initial;
+    imgPlaceholder.innerHTML = `<img src="${char.image}" alt="${char.name}" class="modal-image" />`;
 
     backdrop.classList.add('active');
     panel.classList.add('active');
